@@ -45,3 +45,5 @@ Do not describe the full original acceptance criteria as satisfied until these g
 ## Interactive fieldbook revision
 
 Implemented connected original/expanded navigation, colorful reading catalogue, chapter completion, tutorials and NASA reference desks, improved driving/measurement/landing mechanics, stricter scoring and opt-in ambient music. 47 automated checks pass. Actual Chromium browser, WebGL and mobile/touch emulation checks now pass; see `docs/FIELDBOOK_QA.md`, which supersedes earlier browser-tool limitations. Representative original home screenshots match baseline at desktop/mobile sizes with the additive bridge hidden. All original animation code and timing remain unchanged. Fieldbook publication succeeded from `493c01f9d989d24b5d612e7a6a7c0a8bce1e2a94`. A final stationary-lander/rover activity guard is included in the subsequent correction.
+
+Final fieldbook correction deployed successfully from `0e5cfe1f61f55ddf549fdd7a6ae9d9c48592459f`. Native deployment `appgdep_6af6078534b08191808a036512dc4b0c` succeeded. The 47-check build and original-animation preservation evidence are documented in `docs/FIELDBOOK_QA.md`.
