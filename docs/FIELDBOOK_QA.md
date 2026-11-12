@@ -10,7 +10,7 @@ Gameplay improvements: acceleration/coasting/braking, reduced reverse speed, zer
 
 ## Verification
 
-- Production build, 46 rule/emulated-DOM checks and model/hash/decoder checks pass.
+- Production build, 47 rule/emulated-DOM checks and model/hash/decoder checks pass.
 - Actual headless Chromium 156 tested six readable chapters, chapter completion controls, all eight tutorial/source panels, sample-analysis completion/replay, keyboard rover movement and saved reload, soundtrack play/pause, original-to-expanded navigation and mobile route layouts.
 - All three official NASA models loaded and rendered in WebGL with software rendering; zoom controls exercised and screenshots inspected. This is rendering evidence, not real-device performance certification.
 - Desktop viewport: 1440 × 1000. Mobile layout: 390 × 844. No tested horizontal overflow or JavaScript page errors.
@@ -23,3 +23,5 @@ Gameplay improvements: acceleration/coasting/braking, reduced reverse speed, zer
 ## Remaining limits
 
 Real physical-device performance, exhaustive accessibility testing, every possible browser and every historical animation sequence remain unverified. Official Apollo LRV and Surveyor 3 models are still unavailable in the sources checked, and no substitute spacecraft was invented. NASA source links require connectivity; the playable data remains explicitly synthetic. No claim is made that every possible bug has been eliminated.
+
+Final mission-context regression: the rock activity now selects a rover when the active catalogue mission is a stationary lander. A dedicated regression test passes.
