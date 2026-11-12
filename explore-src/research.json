@@ -1,0 +1,440 @@
+{
+  "checkedAt": "2026-11-12",
+  "scope": "Primary-source fact research for expanded Silent Explorers; source excerpts paraphrased. Historical facts and application simulations must be separately labelled.",
+  "globalCautions": [
+    "All six surface machines are inactive. No dashboard values represent live telemetry.",
+    "Map coordinates describe landing sites unless explicitly stated otherwise; they are not final rover resting coordinates.",
+    "NASA pages mix UTC, Pacific calendar dates, historical datums and updated planetocentric coordinates. Preserve each source's basis.",
+    "MER instrument work was in situ; educational sample collection must not imply Spirit or Opportunity cached or returned physical rock samples.",
+    "Apollo LRV used non-rechargeable batteries; do not offer solar recharge as historical hardware behavior. Viking 1 lander used RTGs, not solar panels."
+  ],
+  "missions": [
+    {
+      "id": "apollo",
+      "name": "Apollo 17 Lunar Roving Vehicle",
+      "world": "Moon",
+      "dates": [
+        {
+          "date": "1972-12-07",
+          "event": "Apollo 17 launched",
+          "basis": "UTC date"
+        },
+        {
+          "date": "1972-12-11",
+          "event": "Lunar module Challenger landed at Taurus-Littrow",
+          "basis": "UTC date"
+        },
+        {
+          "date": "1972-12-14",
+          "event": "Crew departed lunar surface; rover left behind",
+          "basis": "UTC date"
+        },
+        {
+          "date": "1972-12-19",
+          "event": "Apollo 17 crew splashdown",
+          "basis": "UTC date"
+        }
+      ],
+      "location": {
+        "label": "Apollo 17 lunar module landing site, Taurus-Littrow",
+        "latitude": 20.1911,
+        "longitude": 30.7723,
+        "coordinateType": "planetocentric Mean Earth/Polar Axis Lunar Reference System, DE421",
+        "sourcePrecision": "Four decimal places in NASA updated LRO-derived site table; this is LM position, not rover position.",
+        "markerType": "confirmed landing site",
+        "finalHardwareLocation": "Rover parked at VIP site approximately 158 metres from the lunar module; exact rover coordinates not verified in this audit.",
+        "source": "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
+      },
+      "hardware": [
+        "Three-part folding aluminum chassis",
+        "Four wire-mesh wheels with titanium chevrons",
+        "Individual electric drive motor at each wheel",
+        "Front and rear electric steering",
+        "Double-wishbone suspension with torsion bars",
+        "Two foldable seats and central T-shaped hand controller",
+        "Directional gyro, wheel odometer and navigation computer",
+        "Sun-shadow device for manual heading checks",
+        "High-gain antenna and communications/TV equipment"
+      ],
+      "power": {
+        "type": "Two non-rechargeable silver-zinc potassium hydroxide batteries",
+        "voltageEach": 36,
+        "capacityEachAh": 121,
+        "note": "Battery-powered rather than solar-powered. Solar recharge would be fictional."
+      },
+      "navigation": "Directional gyro and odometer fed a computer that tracked bearing and distance back to the lunar module; Sun-shadow device provided manual heading information.",
+      "science": [
+        "Rover extended geological traverses and carried astronauts, tools and collected samples.",
+        "At Shorty crater, astronauts collected orange soil later identified as titanium-rich volcanic glass beads.",
+        "Apollo 17 returned samples and deployed surface experiments; the rover itself did not return to Earth."
+      ],
+      "ending": "Parked on the Moon and used to televise lunar liftoff. No current operational claim.",
+      "sources": [
+        "https://www.nasa.gov/mission/apollo-17/",
+        "https://www.nasa.gov/history/50-years-ago-apollo-17-lands-at-taurus-littrow/",
+        "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html",
+        "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A17_PressKit.pdf",
+        "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
+      ],
+      "conflicts": [
+        "NASA LRV page gives Apollo17 travel 35.9 km; other NASA histories use 35.744 km / 35.7 km. Avoid excessive precision or note source-specific total.",
+        "Older Apollo mission report gives LM20.19080N,30.77168E; use updated LRO-derived20.1911N,30.7723E for current map."
+      ]
+    },
+    {
+      "id": "surveyor",
+      "name": "Surveyor 3",
+      "world": "Moon",
+      "dates": [
+        {
+          "date": "1967-04-17",
+          "event": "Launch"
+        },
+        {
+          "date": "1967-04-20",
+          "event": "Soft landing",
+          "basis": "00:04:17 UT reported by NASA Science"
+        },
+        {
+          "date": "1967-05-04",
+          "event": "Last contact"
+        },
+        {
+          "date": "1969-11-20",
+          "event": "Apollo 12 second EVA visited Surveyor and recovered selected components",
+          "basis": "UTC; NASA mission article/photo historical dates"
+        }
+      ],
+      "location": {
+        "label": "Surveyor 3 landing site, Oceanus Procellarum",
+        "latitude": -3,
+        "longitude": -23.41,
+        "coordinateType": "Historical NASA-reported degrees south/west; datum not stated on source page",
+        "sourcePrecision": "Coarse historical location; show approximate marker, not exact survey position.",
+        "markerType": "approximate landing site",
+        "finalHardwareLocation": "Main lander remains on Moon; selected components returned by Apollo12.",
+        "source": "https://science.nasa.gov/mission/surveyor-3/"
+      },
+      "instruments": [
+        "Television camera",
+        "Soil-mechanics surface sampler"
+      ],
+      "science": [
+        "Returned 6,326 television images.",
+        "Surface sampler dug trenches, made bearing tests and manipulated soil within camera view.",
+        "Soil tests informed understanding of whether the lunar surface could support crewed spacecraft."
+      ],
+      "returnedComponents": [
+        "Television camera",
+        "Soil sampler scoop",
+        "Cable sections",
+        "Painted and unpainted support tubing"
+      ],
+      "returnedComponentsNote": "Apollo12 returned selected parts for exposure studies, not the entire lander. JPL archive lists camera, cable, tubing and trenching scoop; Apollo12 mission report identifies cable, painted tube, unpainted tube, camera and scoop.",
+      "ending": "Contact ended May4,1967 after lunar night began; lander remained available for Apollo12 examination.",
+      "sources": [
+        "https://science.nasa.gov/mission/surveyor-3/",
+        "https://www.jpl.nasa.gov/missions/surveyor-3/",
+        "https://www.jpl.nasa.gov/blog/2012/1/surveyor-3-camera-returned-from-the-moon",
+        "https://www.nasa.gov/missions/apollo/apollo-12-the-pinpoint-mission/",
+        "https://sma.nasa.gov/SignificantIncidents/assets/a12_missionreport.pdf",
+        "https://science.nasa.gov/resource/apollo-12-and-surveyor-3/"
+      ],
+      "conflicts": [
+        "Surveyor3 NASA Science narrative incorrectly says Apollo12 landed Nov18 and visited on Nov19; Apollo12 official mission chronology and photographic dates give landing Nov19 and secondEVA visit Nov20UTC. Use Apollo12 chronology.",
+        "The historical Apollo12 visit's UTC date differs from local US evening calendar date; state time basis."
+      ]
+    },
+    {
+      "id": "opportunity",
+      "name": "Opportunity (MER-B)",
+      "world": "Mars",
+      "dates": [
+        {
+          "date": "2003-07-07",
+          "event": "Launch",
+          "basis": "Pacific date; NASA lists20:18:15PDT, corresponding to2003-07-08UTC"
+        },
+        {
+          "date": "2004-01-25",
+          "event": "Landing in Eagle crater, Meridiani Planum",
+          "basis": "UTC;2004-01-24Pacific"
+        },
+        {
+          "date": "2018-06-10",
+          "event": "Final communication"
+        },
+        {
+          "date": "2019-02-13",
+          "event": "NASA declared mission complete"
+        }
+      ],
+      "location": {
+        "label": "Opportunity landing site, Eagle crater / Meridiani Planum",
+        "latitude": -1.9483,
+        "longitude": -5.52583,
+        "originalLongitudeEast": 354.47417,
+        "coordinateType": "NASA historical landing coordinates; longitude converted from0..360east to-180..180east",
+        "sourcePrecision": "Source reports1.9483S354.47417E; datum not specified in mission article. Global map is illustrative.",
+        "markerType": "reported landing site",
+        "finalHardwareLocation": "Final resting location is Perseverance Valley at Endeavour crater, not Eagle crater landing site. No final-resting coordinate verified here.",
+        "source": "https://science.nasa.gov/mission/mer-opportunity/"
+      },
+      "instruments": [
+        "Pancam panoramic cameras",
+        "Navcam navigation cameras",
+        "Mini-TES miniature thermal emission spectrometer",
+        "Mössbauer spectrometer",
+        "Alpha Particle X-ray Spectrometer(APXS)",
+        "Microscopic Imager",
+        "Rock Abrasion Tool(RAT)",
+        "Dust collection magnets"
+      ],
+      "hardware": [
+        "Six-wheel rocker-bogie mobility",
+        "Robotic instrument arm",
+        "Solar arrays and rechargeable batteries",
+        "High-gain/low-gain antennas and orbiter-relay communications"
+      ],
+      "science": [
+        "Hematite-rich spherules called blueberries and rock textures provided evidence for ancient water.",
+        "Investigated multiple ancient environments that could have supported microbial life; did not establish that life existed.",
+        "Drove45.16km before final communication; greatly exceeded90-sol prime mission."
+      ],
+      "ending": "2018 planet-encircling dust storm reduced available sunlight. Rover last communicatedJune10,2018; recovery efforts endedFebruary13,2019.",
+      "sources": [
+        "https://science.nasa.gov/mission/mer-opportunity/",
+        "https://www.jpl.nasa.gov/missions/mars-exploration-rover-opportunity-mer/",
+        "https://www.jpl.nasa.gov/news/mineral-in-mars-berries-adds-to-water-story/",
+        "https://www.jpl.nasa.gov/images/pia19113-martian-concretions-near-fram-crater/",
+        "https://www.jpl.nasa.gov/images/pia05251-mars-exploration-rover-mer-b-opportunity-landing-site/"
+      ],
+      "conflicts": [
+        "Landing Jan24Pacific and Jan25UTC are the same event.",
+        "Do not use source narrative's Jan3,2014 ten-year-anniversary sentence; Opportunity's anniversary belongs to Jan24Pacific/Jan25UTC."
+      ]
+    },
+    {
+      "id": "spirit",
+      "name": "Spirit (MER-A)",
+      "world": "Mars",
+      "dates": [
+        {
+          "date": "2003-06-10",
+          "event": "Launch"
+        },
+        {
+          "date": "2004-01-04",
+          "event": "Gusev crater landing",
+          "basis": "UTC;2004-01-03Pacific"
+        },
+        {
+          "date": "2006",
+          "event": "Right-front wheel became immobile"
+        },
+        {
+          "date": "2007",
+          "event": "Dragging wheel exposed silica-rich soil"
+        },
+        {
+          "date": "2009",
+          "event": "Became trapped in soft soil at Troy near Home Plate",
+          "basis": "Some sources sayApril; NASA Science narrative saysMay1. Useyear orApril–May unless a specific source is cited."
+        },
+        {
+          "date": "2010-03-22",
+          "event": "Last communication"
+        },
+        {
+          "date": "2011-05-25",
+          "event": "Recovery efforts ended",
+          "basis": "NASA Science; JPL announcement publishedMay24 described upcoming final command attempts"
+        }
+      ],
+      "location": {
+        "label": "Spirit landing site, Gusev crater / Columbia Memorial Station",
+        "latitude": -14.5692,
+        "longitude": 175.4729,
+        "coordinateType": "NASA-reported historical landing coordinates; datum not specified on mission page",
+        "sourcePrecision": "Source4decimal places; illustrative global map rather than exact route reconstruction.",
+        "markerType": "reported landing site",
+        "finalHardwareLocation": "Spirit rests atTroy near Home Plate in Columbia Hills region; not at the initial landing marker. Exact final-resting coordinates not verified here.",
+        "source": "https://science.nasa.gov/mission/mer-spirit/"
+      },
+      "instruments": [
+        "Pancam",
+        "Navcam",
+        "Mini-TES",
+        "Mössbauer spectrometer",
+        "APXS",
+        "Microscopic Imager",
+        "Rock Abrasion Tool",
+        "Dust collection magnets"
+      ],
+      "science": [
+        "Explored Columbia Hills and climbed Husband Hill.",
+        "Nearly pure silica exposed by dragging wheel was consistent with an ancient hot-spring or steam-vent environment.",
+        "Home Plate observations supported ancient explosive volcanic activity.",
+        "Trapped-rover studies continued to return useful soil information."
+      ],
+      "ending": "Mobility loss and inability to achieve a favorable winter solar tilt preceded final contact. Severe cold and declining solar energy are probable explanations, not directly observed failure telemetry.",
+      "sources": [
+        "https://science.nasa.gov/mission/mer-spirit/",
+        "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+        "https://www.jpl.nasa.gov/news/nasa-concludes-attempts-to-contact-mars-rover-spirit/",
+        "https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20160001767.pdf",
+        "https://www.jpl.nasa.gov/news/nasa-trapped-mars-rover-finds-evidence-of-subsurface-water/"
+      ],
+      "conflicts": [
+        "Landing Jan3Pacific andJan4UTC are same event.",
+        "Trapping date variesApril versusMay2009; avoid unjustified single-day precision.",
+        "Conclude recoveryMay25 while announcement dateMay24; distinguish events."
+      ]
+    },
+    {
+      "id": "viking",
+      "name": "Viking 1 lander",
+      "world": "Mars",
+      "dates": [
+        {
+          "date": "1975-08-20",
+          "event": "Launch"
+        },
+        {
+          "date": "1976-06-19",
+          "event": "Entered Mars orbit"
+        },
+        {
+          "date": "1976-07-20",
+          "event": "Landed in Chryse Planitia",
+          "basis": "11:53:06UT in NASA Science"
+        },
+        {
+          "date": "1976-07-28",
+          "event": "First soil sample collected by arm"
+        },
+        {
+          "date": "1982-11-11",
+          "event": "Final data transmission per NASA image/archive sources"
+        },
+        {
+          "date": "1982-11-13",
+          "event": "Lander end of mission per NASA Viking Project and NSSDC"
+        }
+      ],
+      "location": {
+        "label": "Viking1 lander, Chryse Planitia",
+        "latitude": 22.27,
+        "longitude": -47.95,
+        "originalLongitudeEast": 312.05,
+        "coordinateType": "planetocentric, explicitly identified in NASA Viking Project/NSSDC source",
+        "sourcePrecision": "Two decimal places; reported landing-site position, no sub-metre precision implied.",
+        "markerType": "reported landing site; stationary lander",
+        "finalHardwareLocation": "Lander remains at landing site.",
+        "source": "https://nssdc.gsfc.nasa.gov/planetary/viking.html"
+      },
+      "instruments": [
+        "Two facsimile imaging cameras",
+        "Gas Chromatograph Mass Spectrometer(GCMS)",
+        "X-Ray Fluorescence Spectrometer",
+        "Biology experiments: Gas Exchange, Labeled Release, Pyrolytic Release",
+        "Weather package: temperature, pressure and wind",
+        "Remote soil-sampler arm",
+        "Seismometer carried but failed to deploy and returned no useful seismic data"
+      ],
+      "power": "Two SNAP-19 radioisotope thermoelectric generators; not solar panels.",
+      "science": [
+        "Returned historical surface images and atmospheric/weather observations.",
+        "Analyzed soil chemistry and conducted biology experiments.",
+        "Biology results showed chemical activity and ambiguous responses; no definitive evidence for Martian life was established."
+      ],
+      "ending": "Communication ceased inNovember1982 after a command-related problem; distinguish final-data dateNov11 from commonly listed mission-end dateNov13 rather than asserting a single uncontested date.",
+      "sources": [
+        "https://science.nasa.gov/mission/viking-1/",
+        "https://science.nasa.gov/mission/viking/",
+        "https://nssdc.gsfc.nasa.gov/planetary/viking.html",
+        "https://www.jpl.nasa.gov/images/pia09703-viking-lander-model/",
+        "https://pds.nasa.gov/ds-view/pds/viewContext.jsp?identifier=urn%3Anasa%3Apds%3Acontext%3Ainstrument_host%3Aspacecraft.vl1&version=1.2",
+        "https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19890016985.pdf"
+      ],
+      "conflicts": [
+        "NASA Science individual mission page gives22.483N47.94W without datum; project/NSSDC explicitly planetocentric22.27N312.05E. Do not mix coordinate systems.",
+        "NASA Science individual mission page conflatesNov11 final transmission with command/end date. Project pages listNov13. UseNovember1982 for broad summaries, explain both in detail.",
+        "Do not conflate Viking1 andViking2 seismometer performance or lander/orbiter power sources."
+      ]
+    },
+    {
+      "id": "insight",
+      "name": "InSight lander",
+      "world": "Mars",
+      "dates": [
+        {
+          "date": "2018-05-05",
+          "event": "Launch"
+        },
+        {
+          "date": "2018-11-26",
+          "event": "Landed in Elysium Planitia",
+          "basis": "19:52:59UTC fromNASA11:52:59Pacific"
+        },
+        {
+          "date": "2019-04-06",
+          "event": "First likely marsquake recorded bySEIS"
+        },
+        {
+          "date": "2021-01-14",
+          "event": "NASA announced end of HP3 mole recovery effort after finalJan9hammering"
+        },
+        {
+          "date": "2022-12-15",
+          "event": "Last communication"
+        },
+        {
+          "date": "2022-12-21",
+          "event": "Mission retirement announced"
+        }
+      ],
+      "location": {
+        "label": "InSight actual landing site, western Elysium Planitia",
+        "latitude": 4.502,
+        "longitude": 135.623,
+        "coordinateType": "Published landing-site geology location, rounded from4.502384N135.623447E",
+        "sourcePrecision": "Rounded to0.001degree for educational map; not prelanding ellipse center.",
+        "markerType": "published landing location; stationary lander",
+        "finalHardwareLocation": "Lander remains at landing site.",
+        "source": "https://ntrs.nasa.gov/api/citations/20205003726/downloads/Golombek_Geology_of%20_InSight_landing_site_2020_Nature_communications_s41467-020-14679-1.pdf"
+      },
+      "instruments": [
+        "SEIS(Seismic Experiment for Interior Structure), supplied byCNES with international contributions",
+        "HP3(Heat Flow and Physical Properties Package), supplied byDLR",
+        "RISE(Rotation and Interior Structure Experiment), precision X-band radio science",
+        "Instrument Deployment Arm with grapple",
+        "Instrument Deployment Camera(IDC)",
+        "Instrument Context Camera(ICC)",
+        "Weather and magnetic/environmental sensors"
+      ],
+      "science": [
+        "SEIS recorded1,319marsquakes according to final NASA/JPL report.",
+        "Seismic observations constrained properties of Mars' crust,mantle and core.",
+        "RISE radio tracking investigated rotational wobble and interior properties.",
+        "HP3 did not reach the depth needed for the intended subsurface heat-flow experiment."
+      ],
+      "hp3Failure": "Unexpected clumping/soil properties deprived the self-hammering mole of the friction it needed to dig. Arm/scoop-assisted attempts did not achieve sufficient depth. Do not portray failure as proof of hard bedrock or a successful deep heat-flow measurement.",
+      "seis": "Ground-deployed sensitive seismometer distinguished marsquake signals from wind, temperature and spacecraft disturbances; educational waveforms are simulated unless actual source datasets are supplied.",
+      "ending": "Dust accumulation reduced solar production. After failed contacts, team concluded batteries had run out of energy. Last contactDec15; retirement announcementDec21,2022.",
+      "sources": [
+        "https://science.nasa.gov/mission/insight/",
+        "https://science.nasa.gov/mission/insight/spacecraft/",
+        "https://www.jpl.nasa.gov/news/nasas-insight-detects-first-likely-quake-on-mars/",
+        "https://www.jpl.nasa.gov/news/nasa-insights-mole-ends-its-journey-on-mars/",
+        "https://www.jpl.nasa.gov/news/nasa-retires-insight-mars-lander-mission-after-years-of-science/",
+        "https://ntrs.nasa.gov/api/citations/20205003726/downloads/Golombek_Geology_of%20_InSight_landing_site_2020_Nature_communications_s41467-020-14679-1.pdf"
+      ],
+      "conflicts": [
+        "4.5N135.9E on NASA landing/press pages is a prelanding region or ellipse center, not the final lander position. Use published actual site4.502N135.623E.",
+        "NASA mission page labelsDec15as end of mission; retirement announcement isDec21. Display both event names.",
+        "Do not implyHP3met its deep heat-flow objective."
+      ]
+    }
+  ]
+}
