@@ -41,3 +41,7 @@ Models: unmodified NASA shared MER, Viking 1 and InSight assets. Apollo 17 LRV a
 Outstanding: browser/mobile/visual/accessibility/performance QA, suitable official Apollo LRV and Surveyor models, and visual verification of component selection and model framing. These are acceptance gaps, not completed checks. The atlas remains a coordinate grid rather than an exact terrain/route reconstruction.
 
 Do not describe the full original acceptance criteria as satisfied until these gaps are resolved.
+
+## Interactive fieldbook revision
+
+Implemented connected original/expanded navigation, colorful reading catalogue, chapter completion, tutorials and NASA reference desks, improved driving/measurement/landing mechanics, stricter scoring and opt-in ambient music. 46 automated checks pass. Actual Chromium browser, WebGL and mobile/touch emulation checks now pass; see `docs/FIELDBOOK_QA.md`, which supersedes earlier browser-tool limitations. Representative original home screenshots match baseline at desktop/mobile sizes with the additive bridge hidden. All original animation code and timing remain unchanged. Publishing revision in progress.

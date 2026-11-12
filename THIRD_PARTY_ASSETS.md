@@ -15,3 +15,5 @@ Typography: DM Sans and IBM Plex Mono via Google Fonts (SIL Open Font License); 
 New icons, coordinate-grid atlas, educational terrain and synthetic waveform diagrams are application graphics. They are not official NASA engineering models, cartographic terrain products or real instrument data. The descent exercise displays a schematic marker, not a historical lander reconstruction.
 
 Draco decoder assets: Google Draco via the pinned Three.js package, Apache License 2.0. Bundled locally without modification in `explore-public/assets/draco/`; license included as `LICENSE.txt`. The official InSight source requires KHR_draco_mesh_compression. No project-side mesh recompression or geometry modification is performed.
+
+Fieldbook music: original Web Audio sine-wave composition/sequencing in `explore-src/music.js`, three user-selectable harmonic atmospheres. No third-party recordings and no NASA audio attribution implied.
