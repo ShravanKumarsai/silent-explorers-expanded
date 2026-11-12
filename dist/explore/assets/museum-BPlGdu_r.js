@@ -1,4 +1,4 @@
-import{R as Ol}from"./index-BHu728S1.js";/**
+import{R as Ol}from"./index-CEUiSoie.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT

@@ -30,7 +30,7 @@ Museum: drag to rotate, wheel to zoom, right drag to pan; two-finger gestures fo
 
 Deploy the `dist/` directory at the origin root. `/explore/` must retain its trailing-slash entry path and hash navigation. A subpath such as GitHub Pages `/repository-name/` requires configuring Vite `base` and original root links for that hosting layout; it is not the default preservation deployment.
 
-The new root `.openai/hosting.json` belongs only to this independent Site. The unchanged `dist/.openai/hosting.json` and copies inside backups are historical baseline files; never use their project ID for new deployment. Do not put credentials in any manifest or commit.
+The new root `.openai/hosting.json` belongs only to this independent Site. The unchanged `dist/.openai/hosting.json` and copies inside backups are historical baseline files; never use their project ID for new deployment. Use `npm run package -- /absolute/archive.tar.gz` to package the new deployment while excluding inert original `dist/.openai/` metadata from the archive. Do not put credentials in any manifest or commit.
 
 ## Evidence and acceptance status
 

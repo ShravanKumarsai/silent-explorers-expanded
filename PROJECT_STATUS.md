@@ -24,17 +24,19 @@ Models: unmodified NASA shared MER, Viking 1 and InSight assets. Apollo 17 LRV a
 
 - Original source integrity: passed (83 files).
 - Attachment/archive syntax and image integrity: passed, see testing report.
-- Expanded validation: 40 passing tests (22 rules, 11 activity DOM, 7 navigation/integration DOM).
+- Expanded validation: 42 passing tests (24 rules, 11 activity DOM, 7 navigation/integration DOM).
 - Production build and final integrity/path checks: passed.
 - Browser rendering, touch/device behavior, visual regression, accessibility audit and lower-powered-device frame rates: unverified. No `cua_repl.js` browser tool is available in this environment; no substitute browser-control route is used.
-- New GitHub implementation milestones and deployment: in progress.
+- Expanded implementation committed as `987a02f39cf0402858ea481b101c05ee654b4b28`; first private deployment succeeded. Persistence regression correction is being published.
 
-## Remaining acceptance gaps
+## Hosting and remaining acceptance gaps
 
-1. Complete final automated and emulated-DOM checks, inspect failures and rerun changed checks.
-2. Commit/publish implementation, asset and validation milestones to destination using verified-owner connector.
-3. Deploy independent Site if supported tooling is available.
-4. Perform browser/mobile/visual QA when supported browser tools become available.
-5. Locate or obtain suitable official Apollo LRV and Surveyor models; verify detailed component identity/hotspot placement visually.
+- Independent private Site: https://silent-explorers-expanded.easybuckle.chatgpt.site
+- Original experience: `/`; expansion: `/explore/`.
+- Source and asset import are complete. Final automated validation passes. A follow-up correction restores in-progress traverses after browser-storage reload and rejects malformed saved data.
+- Packaging excludes only the original inert `dist/.openai/` metadata; all original repository files remain unchanged.
+- Supported Sites helper scripts were not installed in this environment. Publication used the Site-scoped credential via hidden stdin for a standard authenticated Git push, then a static artifact archive and native private publication. No credential was written to files or source.
 
-Do not describe this project as fully accepted until these gaps are resolved.
+Outstanding: browser/mobile/visual/accessibility/performance QA, suitable official Apollo LRV and Surveyor models, and visual verification of component selection and model framing. These are acceptance gaps, not completed checks. The atlas remains a coordinate grid rather than an exact terrain/route reconstruction.
+
+Do not describe the full original acceptance criteria as satisfied until these gaps are resolved.
