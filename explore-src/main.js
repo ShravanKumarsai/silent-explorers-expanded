@@ -2,6 +2,7 @@ import {mountExpedition} from './expedition.js';
 import {tutorial,sourcePanel,chapterNavigation} from './fieldbook.js';
 import {mountMusic} from './music.js';
 import './style.css';
+import './interactions.js';
 import {missions,getMission,games,nav} from './content.js';
 import {readProgress,saveProgress,recordGame,badges,budget,powerOutcome,STORAGE_KEY} from './state.js';
 import {mountGame,mountTraverse} from './games.js';
