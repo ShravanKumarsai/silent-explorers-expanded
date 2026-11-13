@@ -51,3 +51,5 @@ Final fieldbook correction deployed successfully from `0e5cfe1f61f55ddf549fdd7a6
 ## Unified story expedition revision
 
 The root is now one continuous reading flow, retaining the original presentation as the opening chapter and replacing floating cross-site links with contextual chapter navigation. The flagship Opportunity game has three rendered camera modes, a live navigation inset, frame capture, instrument integrations, collision/energy consequences, a dust decision, return leg and an evidence-based end-game report. 57 checks pass; Chromium camera/report/unified navigation checks pass. See docs/UNIFIED_EXPEDITION.md for exact evidence and simulation limits. Publication pending.
+
+Unified root and story expedition publication succeeded from `a57f8d6fad62cc1fb4e3092283e252685405c875`. Deployment `appgdep_6af69876351c8191a6f1dc4d5f6eb70c` succeeded on 13 November 2026. Root URL: https://silent-explorers-expanded.easybuckle.chatgpt.site/ . Original opening, catalogue and expedition now share one outer navigation workflow. Camera feeds are live simulation renders, not Mars downlinks.
