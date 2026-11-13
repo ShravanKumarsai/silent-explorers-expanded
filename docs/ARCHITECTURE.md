@@ -9,3 +9,5 @@ Official GLBs are immutable assets. Museum camera controls change only the view;
 The service worker is scoped only to `/explore/`. It caches essential educational content, application bundles and historical photographs after first online installation. Large models are excluded. It never intercepts or changes the original experience. Cache version derives from built content.
 
 No backend, API keys, paid API, user account, external telemetry or AI service is required. Optional Google Fonts requests can fail without blocking the experience. Storage failure is reported in the footer. Journal export produces a local JSON download.
+
+Current architecture update: `docs/UNIFIED_EXPEDITION.md` supersedes the earlier two-entry presentation. The same outer document switches between a retained original-story frame and catalogue/game chapters, with mutually exclusive controls. The canonical app entry is now `/`.

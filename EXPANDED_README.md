@@ -35,3 +35,7 @@ The new root `.openai/hosting.json` belongs only to this independent Site. The u
 ## Evidence and acceptance status
 
 See `PROJECT_STATUS.md`, `docs/TESTING_REPORT.md`, `docs/ORIGINAL_FILE_MANIFEST.txt`, `docs/VISUAL_REGRESSION_CHECKLIST.md`, `NASA_3D_ASSET_CREDITS.md` and `THIRD_PARTY_ASSETS.md`. Unit and emulated-DOM tests do not prove browser rendering, touch-device behavior or visual equivalence. Those checks are explicitly outstanding.
+
+## Unified entry and flagship expedition
+
+Start at `/`. The original animated story is the opening chapter, with catalogue/expedition continuation at its end. Existing `/explore/` links canonicalize to the same root workflow. `scripts/unify.mjs` builds the root shell and the isolated original chapter from `heritage-src/index.html` plus unchanged baseline assets. The original root entry is deliberately replaced by this authorized unified shell; original animation source remains intact. See `docs/UNIFIED_EXPEDITION.md` for camera modes, controls, complete mission arc and validation limits.

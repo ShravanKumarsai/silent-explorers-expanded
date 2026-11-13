@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build && node scripts/cache.mjs",
+    "build": "vite build && node scripts/cache.mjs && node scripts/unify.mjs",
     "test": "node --test tests/*.test.js",
     "verify": "node scripts/verify.mjs && node scripts/validate-draco.cjs",
     "package": "node scripts/package-site.mjs"
