@@ -158,3 +158,11 @@ The MER part selector uses the 40 NASA-named hardware nodes, grouping their mate
 ### NASA photographic records
 
 56 NASA photographs/photographic mosaics are bundled: Apollo 17 (16), Surveyor 3 (8, including context/training), Opportunity (8), Spirit (8), Viking 1 (8), InSight (8, including Earth tests). Individual title, full NASA caption, credit, NASA ID, official source page, download/original URL, catalogue date, explicit caption exposure date where available, processing and checksums are retained in `explore-public/assets/archive/photos.json`. No capture dates are inferred from catalogue timestamps. Display images are resized to at most 1600 pixels and encoded WebP; orbital thumbnails use 384 pixels. No generative edits. Images and captions are cached from NASA, not a live telemetry feed.
+
+## Mars globe archive revision
+
+The archive now uses NASA’s Mars globe instead of MER. Source: https://solarsystem.nasa.gov/gltf_embed/2372/
+
+Download: https://solarsystem.nasa.gov/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEFRIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9ddbf780bb3c564b8e561bb238a2f6713d445c42/Mars_1_6792.glb
+
+Credit: NASA / Solar System Exploration. Format: GLB. Downloaded bytes unchanged; uniform whole-model placement/scale only. Usage: NASA educational/informational media guidelines linked above. SHA-256: `0d27fc65fe3e6a5847cf0cd3a5c951538afdd49bd0513607d8a70e8ab1d8d7ac`. Photographs now follow four spherical latitude bands around Mars.

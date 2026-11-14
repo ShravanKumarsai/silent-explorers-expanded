@@ -1,7 +1,7 @@
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 const buffers = /* @__PURE__ */ new Map();
-const NASA_MODEL_PATHS = { mer: "/explore/assets/models/mer.glb", viking: "/explore/assets/models/viking.glb", insight: "/explore/assets/models/insight.glb", "mer-components": "/explore/assets/archive/mer-components.glb", hete: "/explore/assets/archive/hete.glb" };
+const NASA_MODEL_PATHS = { mars: "/explore/assets/archive/mars.glb", mer: "/explore/assets/models/mer.glb", viking: "/explore/assets/models/viking.glb", insight: "/explore/assets/models/insight.glb", "mer-components": "/explore/assets/archive/mer-components.glb", hete: "/explore/assets/archive/hete.glb" };
 function disposeObject(root) {
   const geometries = /* @__PURE__ */ new Set(), materials = /* @__PURE__ */ new Set(), textures = /* @__PURE__ */ new Set();
   root?.traverse((o) => {

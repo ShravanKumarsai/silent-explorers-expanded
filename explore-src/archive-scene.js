@@ -143,42 +143,32 @@ function mountArchiveScene(container, { onHover = () => {
         moon.material[key] = texture;
         moon.material.needsUpdate = true;
       }, void 0, () => onStatus("Moon texture unavailable; NASA photographs remain accessible below."));
-    } else loadNASAModel("mer", { signal: worldAbort.signal }).then((gltf) => {
+    } else loadNASAModel("mars", { signal: worldAbort.signal }).then((gltf) => {
       if (disposed || token !== generation) {
         disposeObject(gltf.scene);
         return;
       }
-      const box = new T.Box3().setFromObject(gltf.scene), size = box.getSize(new T.Vector3()), center = box.getCenter(new T.Vector3()), pivot = new T.Group(), scale = 3.1 / Math.max(size.x, size.y, size.z);
+      const box = new T.Box3().setFromObject(gltf.scene), size = box.getSize(new T.Vector3()), center = box.getCenter(new T.Vector3()), pivot = new T.Group(), scale = 3.5 / Math.max(size.x, size.y, size.z);
       gltf.scene.scale.setScalar(scale);
       gltf.scene.position.copy(center.multiplyScalar(-scale));
       pivot.add(gltf.scene);
       group.add(pivot);
     }).catch((e) => {
-      if (e.name !== "AbortError" && !disposed && token === generation) onStatus("Rover model unavailable. NASA photographs remain accessible below.");
+      if (e.name !== "AbortError" && !disposed && token === generation) onStatus("Mars globe unavailable. NASA photographs remain accessible below.");
     });
     const slots = photoSlots(world, photos.length);
     for (let i = 0; i < photos.length; i++) {
       const s = slots[i];
       let geometry, home, normal;
-      if (world === "Moon") {
-        geometry = new T.SphereGeometry(s.radius, 12, 8, s.angle - Math.PI / 8, Math.PI / 4 * 0.97, s.band * Math.PI / 3 + 0.015, Math.PI / 3 - 0.03);
-        home = new T.Vector3().setFromSphericalCoords(s.radius, s.polar, -s.angle - Math.PI / 2);
-        home.set(-s.radius * Math.cos(s.angle) * Math.sin(s.polar), s.radius * Math.cos(s.polar), s.radius * Math.sin(s.angle) * Math.sin(s.polar));
-        geometry.translate(-home.x, -home.y, -home.z);
-        normal = home.clone().normalize();
-      } else {
-        geometry = new T.CylinderGeometry(s.radius, s.radius, 1.02, 12, 1, true, s.angle - Math.PI / 8, Math.PI / 4 * 0.97);
-        const rot = new T.Matrix4().makeRotationX(s.inclination);
-        geometry.applyMatrix4(rot);
-        home = new T.Vector3(Math.sin(s.angle) * s.radius, 0, Math.cos(s.angle) * s.radius).applyMatrix4(rot);
-        geometry.translate(-home.x, -home.y, -home.z);
-        normal = home.clone().normalize();
-      }
+      const bands=world==='Moon'?3:4, step=Math.PI/bands;
+      geometry = new T.SphereGeometry(s.radius,12,8,s.angle-Math.PI/8,Math.PI/4*.97,s.band*step+.015,step-.03);
+      home=new T.Vector3(-s.radius*Math.cos(s.angle)*Math.sin(s.polar),s.radius*Math.cos(s.polar),s.radius*Math.sin(s.angle)*Math.sin(s.polar));
+      geometry.translate(-home.x,-home.y,-home.z);normal=home.clone().normalize();
       const material = new T.MeshBasicMaterial({ transparent: true, opacity: 0.32, side: T.DoubleSide, depthWrite: false, color: 16777215 });
       const tile = new T.Mesh(geometry, material);
       tile.position.copy(home);
       tile.visible = false;
-      tile.userData = { photo: photos[i], home, normal, opacity: 0.27, lift: 0, scale: 1, aspect: world === "Moon" ? Math.sin(s.polar) * 0.75 : s.radius * Math.PI / 4 / 1.02 };
+      tile.userData = { photo: photos[i], home, normal, opacity: 0.27, lift: 0, scale: 1, aspect: Math.sin(s.polar) * (world === "Moon" ? .75 : 1) };
       const edge = new T.LineSegments(new T.EdgesGeometry(geometry, 12), new T.LineBasicMaterial({ color: 14280374, transparent: true, opacity: 0, depthWrite: false }));
       tile.add(edge);
       tile.userData.edge = edge;

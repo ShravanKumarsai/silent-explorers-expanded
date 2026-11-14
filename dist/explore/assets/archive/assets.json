@@ -71,6 +71,20 @@
       "sha256": "8fabf519e62a9bd02ec6832bfef99f55ba8a31c2cd4b0e799d5a00d37b03321e",
       "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
       "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "path": "assets/archive/mars.glb",
+      "mission": "Mars archive",
+      "name": "NASA Mars globe \u2014 Mars_1_6792",
+      "source": "https://solarsystem.nasa.gov/gltf_embed/2372/",
+      "download": "https://solarsystem.nasa.gov/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdEFRIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9ddbf780bb3c564b8e561bb238a2f6713d445c42/Mars_1_6792.glb",
+      "creator": "NASA / Solar System Exploration",
+      "format": "GLB / glTF 2.0",
+      "modifications": "Downloaded bytes unchanged; uniform whole-model placement and scale only.",
+      "bytes": 4032148,
+      "sha256": "0d27fc65fe3e6a5847cf0cd3a5c951538afdd49bd0513607d8a70e8ab1d8d7ac",
+      "usage": "NASA informational/educational media conditions; preserve source credit; no endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
     }
   ]
 }
