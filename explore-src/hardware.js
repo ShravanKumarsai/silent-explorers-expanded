@@ -1,9 +1,10 @@
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 function mountHardware(host, { mission: m, manifest, onInspect = () => {
 }, references = "" }) {
-  let view = null, disposed = false, current = 0;
+  let view = null, disposed = false, current = 0, loading = false, loadController = null;
+  const photoController = new AbortController();
   const asset = manifest?.models.find((x) => x.id === m.model), q = (s) => host.querySelector(s);
-  host.innerHTML = `<article class="hardware-page"><a class="back-link" href="#mission/${m.id}">\u2190 ${m.short} mission story</a><div class="page-heading"><span class="eyebrow">02 / HARDWARE & SYSTEMS</span><h1>${m.short}, inside and out.</h1><p>Explore the hardware and the engineering decisions behind it, together.</p></div><div class="hardware-layout"><section class="hardware-viewer"><div class="museum-stage"><div class="model-container" id="model-container"></div><div class="model-placeholder"><span class="eyebrow">${m.model ? "OFFICIAL NASA 3D ASSET" : "OFFICIAL MODEL NOT LOCATED"}</span><h2>${m.model ? "Meet the real hardware." : "Read the hardware record."}</h2><p>${m.model ? "Load the NASA model, then choose a system in the guide. Rotate, pan and zoom at your own pace." : "A suitable official downloadable model was not located in the sources checked. Explore the mission photograph and the engineering guide."}</p>${m.model ? '<button class="button" id="load-model">Load official 3D model</button>' : `<img class="missing-model-photo" src="/explore/assets/photos/${m.id}.jpg" alt="${m.short} historical mission photograph">`}</div><div class="model-toolbar" hidden><button data-model="reset">Reset view</button><button data-model="in" aria-label="Zoom in">+</button><button data-model="out" aria-label="Zoom out">\u2212</button><button data-model="left">Pan left</button><button data-model="right">Pan right</button><button data-model="full">Full screen</button></div></div><p class="model-status" role="status">${m.model ? "The engineering guide works before the model loads." : "No substitute spacecraft is displayed."}</p><div class="hardware-caption"><span>${m.model ? esc(asset?.creator || "NASA \xB7 see source credits") : m.short + " historical image"}</span><span>Drag to orbit \xB7 scroll to zoom</span></div><details class="hardware-view-help"><summary>Model controls & source limitations</summary><p>Drag to orbit, scroll to zoom, right-drag to pan. When the canvas is focused, use arrows and +/\u2212, or use the toolbar. Touch supports orbit and two-finger zoom/pan. No mechanical animations or exploded interiors are enabled.</p><p>${esc(asset?.limitations || "Source geometry for this mission was not located. The system descriptions remain available.")}</p>${asset ? `<a href="${esc(asset.source)}" target="_blank" rel="noopener noreferrer">NASA model catalogue \u203A</a>` : ""}<a href="#credits">All sources & usage conditions \u203A</a></details></section><aside class="hardware-guide" aria-label="Inside the machine"><span class="eyebrow">INSIDE THE MACHINE</span><h2>What makes it work?</h2><label for="hardware-system">Choose a spacecraft system</label><select id="hardware-system">${m.components.map(([name], i) => `<option value="${i}">${String(i + 1).padStart(2, "0")} \xB7 ${esc(name)}</option>`).join("")}</select><section class="component-detail" id="component-detail" aria-live="polite"></section><p class="hardware-highlight" role="status"></p><div class="source-selection" role="status"></div><a class="button secondary" href="#lab/${m.activity}">Try this mission\u2019s science activity \u203A</a></aside></div>${references}</article>`;
+  host.innerHTML = `<article class="hardware-page"><a class="back-link" href="#mission/${m.id}">\u2190 ${m.short} mission story</a><div class="page-heading"><span class="eyebrow">03 / HARDWARE & SYSTEMS</span><h1>${m.short}, inside and out.</h1><p>Explore the hardware and the engineering decisions behind it, together.</p></div><div class="hardware-layout"><section class="hardware-viewer"><div class="museum-stage"><div class="model-container" id="model-container"></div><div class="model-placeholder"><span class="eyebrow">${m.model ? "OFFICIAL NASA 3D ASSET" : "OFFICIAL MODEL NOT LOCATED"}</span><h2>${m.model ? "Meet the real hardware." : "Read the hardware record."}</h2><p>${m.model ? "Load the NASA model, then choose a system in the guide. Rotate, pan and zoom at your own pace." : "A suitable official downloadable model was not located in the sources checked. Explore the mission photograph and the engineering guide."}</p>${m.model ? '<button class="button" id="load-model">Load official 3D model</button>' : `<img class="missing-model-photo" src="/explore/assets/photos/${m.id}.jpg" alt="${m.short} historical mission photograph">`}</div><div class="model-toolbar" hidden><button data-model="reset">Reset view</button><button data-model="in" aria-label="Zoom in">+</button><button data-model="out" aria-label="Zoom out">\u2212</button><button data-model="left">Pan left</button><button data-model="right">Pan right</button><button data-model="full">Full screen</button></div></div><p class="model-status" role="status">${m.model ? "The engineering guide works before the model loads." : "No substitute spacecraft is displayed."}</p><div class="hardware-caption"><span>${m.model ? esc(asset?.creator || "NASA \xB7 see source credits") : m.short + " historical image"}</span><span>Drag to orbit \xB7 scroll to zoom</span></div><details class="hardware-view-help"><summary>Model controls & source limitations</summary><p>Drag to orbit, scroll to zoom, right-drag to pan. When the canvas is focused, use arrows and +/\u2212, or use the toolbar. Touch supports orbit and two-finger zoom/pan. The source-part explorer separates display instances of supplied meshes for inspection. It does not reveal unmodelled interiors or simulate mechanical disassembly.</p><p>${esc(asset?.limitations || "Source geometry for this mission was not located. The system descriptions remain available.")}</p>${asset ? `<a href="${esc(asset.source)}" target="_blank" rel="noopener noreferrer">NASA model catalogue \u203A</a>` : ""}<a href="#credits">All sources & usage conditions \u203A</a></details></section><aside class="hardware-guide" aria-label="Inside the machine"><span class="eyebrow">INSIDE THE MACHINE</span><h2>What makes it work?</h2><label for="hardware-system">Choose a spacecraft system</label><select id="hardware-system">${m.components.map(([name], i) => `<option value="${i}">${String(i + 1).padStart(2, "0")} \xB7 ${esc(name)}</option>`).join("")}</select><section class="component-detail" id="component-detail" aria-live="polite"></section><p class="hardware-highlight" role="status"></p><div class="source-selection" role="status"></div><a class="button secondary" href="#lab/${m.activity}">Try this mission\u2019s science activity \u203A</a></aside></div>${m.model ? `<section class="parts-explorer"><span class="eyebrow">NASA SOURCE / PART EXPLORER</span><h2>Separate what the source contains.</h2><p>${m.model === "mer" ? "Load the alternative official NASA Blender source, converted to GLB with its saved pose and matching NASA materials. It contains 40 renderable named hardware objects, including six wheels, suspension and chassis. It does not resolve every fastener." : m.model === "viking" ? "This official Viking source has only two coarse meshes. Separation reveals these source groups, not individual instruments or fasteners." : "Inspect the separately supplied InSight source meshes, including instrument and deployment hardware. Mesh boundaries are not a complete engineering parts list."} Offsets below are an educational display, not an assembly sequence.</p><button class="button secondary parts-loader" id="load-parts">${m.model === "mer" ? "Load NASA-source part explorer" : "Enable source-mesh inspection"}</button><div class="parts-controls" hidden><label>Separate source meshes <output id="explode-value">0%</output><input id="explode-amount" type="range" min="0" max="100" value="0" step="1"></label><label>Choose a source mesh<select id="source-part"></select></label><label><input type="checkbox" id="isolate-part"> Show only selected mesh</label><div class="inline-actions"><button class="button secondary" id="inspect-part">Locate selected mesh</button><button class="button secondary" id="reassemble-parts">Reassemble</button></div><p class="parts-status" role="status"></p></div></section>` : ""}<section class="hardware-photos"><span class="eyebrow">THE PHOTOGRAPHIC RECORD</span><h2>Look closer, in NASA’s images.</h2><p class="hardware-photo-status" role="status">Loading mission photographs…</p><div class="archive-photo-grid"></div><a class="text-link" href="#archive/${m.id}">Explore the full ${m.short} photo collection ›</a></section>${references}</article>`;
   function choose(i) {
     current = i;
     const [name, description, term] = m.components[i];
@@ -15,48 +16,32 @@ function mountHardware(host, { mission: m, manifest, onInspect = () => {
   }
   q("#hardware-system").onchange = (e) => choose(+e.target.value);
   choose(0);
-  const load = q("#load-model");
-  if (load) load.onclick = async () => {
-    load.disabled = true;
-    load.textContent = "Loading NASA asset\u2026";
+  const load = q("#load-model"), partsLoad=q('#load-parts');
+  async function loadModel(parts=false){
+    if(loading)return;loading=true;loadController?.abort();loadController=new AbortController();
+    if(load){load.disabled=true;load.textContent="Loading NASA asset…";}if(partsLoad)partsLoad.disabled=true;
+    view?.dispose();view=null;
     try {
-      const { mountMuseum } = await import("./museum.js");
-      if (disposed) return;
-      view = await mountMuseum(q("#model-container"), { id: m.model, onProgress: (p) => {
-        if (!disposed) q(".model-status").textContent = p === null ? "Downloading NASA model\u2026" : `Loading ${p}%`;
-      }, onPick: ({ node, material }) => {
-        if (!disposed) q(".source-selection").textContent = `Source mesh: ${node}. Material: ${material}. These labels do not automatically identify a spacecraft system.`;
-      } });
-      if (disposed) {
-        view.dispose();
-        return;
+      const {mountMuseum}=await import('./museum.js');if(disposed)return;
+      const loaded=await mountMuseum(q('#model-container'),{id:parts&&m.model==='mer'?'mer-components':m.model,signal:loadController.signal,onProgress:p=>{if(!disposed)q('.model-status').textContent=p===null?'Downloading NASA model…':`Loading ${p}%`;},onPick:({node,material})=>{if(!disposed)q('.source-selection').textContent=`Source mesh: ${node}. Material: ${material}. Source labels do not certify every component boundary.`;}});
+      if(disposed){loaded.dispose();return;}view=loaded;
+      q('.model-placeholder').hidden=true;q('.model-toolbar').hidden=false;
+      q('.model-status').textContent=parts?'NASA source meshes loaded. Separate display copies below; original geometry stays intact.':'Official NASA display model loaded. Source geometry, proportions, materials and textures are unchanged.';
+      const controls=q('.parts-controls');if(controls)controls.hidden=!parts;
+      if(parts){const select=q('#source-part');select.innerHTML=view.parts.map(p=>`<option value="${p.index}">${esc(p.name)}</option>`).join('');q('#explode-amount').value=0;q('#explode-value').textContent='0%';q('#isolate-part').checked=false;
+        const update=()=>{view.setExplode(+q('#explode-amount').value/100);view.isolate(q('#isolate-part').checked?+select.value:null);q('#explode-value').textContent=q('#explode-amount').value+'%';q('.parts-status').textContent=`${view.parts.length} supplied mesh objects. Selected: ${view.parts[+select.value].name}.`;};
+        q('#explode-amount').oninput=update;select.onchange=update;q('#isolate-part').onchange=update;q('#inspect-part').onclick=()=>view.inspectPart(+select.value);q('#reassemble-parts').onclick=()=>{q('#explode-amount').value=0;q('#isolate-part').checked=false;update();view.reset();};update();
       }
-      q(".model-placeholder").hidden = true;
-      q(".model-toolbar").hidden = false;
-      q(".model-status").textContent = "Official NASA model loaded. Source geometry, proportions, materials and textures are unchanged.";
       choose(current);
-      host.querySelectorAll("[data-model]").forEach((b) => b.onclick = () => {
-        const a = b.dataset.model;
-        if (a === "reset") view.reset();
-        if (a === "in") view.zoom(0.85);
-        if (a === "out") view.zoom(1.18);
-        if (a === "left") view.pan(-0.12);
-        if (a === "right") view.pan(0.12);
-        if (a === "full") {
-          if (document.fullscreenElement) document.exitFullscreen?.();
-          else q(".museum-stage").requestFullscreen?.().catch(() => q(".model-status").textContent = "Full screen is unavailable in this browser.");
-        }
-      });
-    } catch (e) {
-      if (disposed) return;
-      load.disabled = false;
-      load.textContent = "Retry 3D model";
-      q(".model-status").textContent = "The 3D model could not start. Check WebGL/network support and retry. The engineering guide remains available. " + e.message;
-    }
-  };
+      host.querySelectorAll('[data-model]').forEach(b=>b.onclick=()=>{const a=b.dataset.model;if(a==='reset')view.reset();if(a==='in')view.zoom(.85);if(a==='out')view.zoom(1.18);if(a==='left')view.pan(-.12);if(a==='right')view.pan(.12);if(a==='full'){if(document.fullscreenElement)document.exitFullscreen?.();else q('.museum-stage').requestFullscreen?.().catch(()=>q('.model-status').textContent='Full screen is unavailable in this browser.');}});
+    }catch(e){if(disposed||e.name==='AbortError')return;q('.model-placeholder').hidden=false;q('.model-toolbar').hidden=true;q('.parts-controls')?.setAttribute('hidden','');q('.model-status').textContent='The model could not start. Retry, or use the NASA photo gallery. '+e.message;
+    }finally{loading=false;if(!disposed){if(load){load.disabled=false;load.textContent='Load official display model';}if(partsLoad)partsLoad.disabled=false;}}
+  }
+  if(load)load.onclick=()=>loadModel(false);if(partsLoad)partsLoad.onclick=()=>loadModel(true);
+  fetch('/explore/assets/archive/photos.json',{signal:photoController.signal}).then(r=>{if(!r.ok)throw Error('Catalogue unavailable');return r.json();}).then(data=>{if(disposed)return;const images=data.images.filter(p=>p.mission===m.id).slice(0,4);q('.hardware-photo-status').textContent=m.model?'Official NASA images add context to the source model.':'Several NASA photographs are available while the official model gap remains explicit.';q('.hardware-photos .archive-photo-grid').innerHTML=images.map(p=>`<a class="archive-photo-card" href="${esc(p.source)}" target="_blank" rel="noopener noreferrer"><img src="/explore/${p.thumbnailPath}" loading="lazy" alt="${esc(p.title)}"><span><small>${esc(p.id)} · ${esc(p.credit)}</small><strong>${esc(p.title)}</strong></span></a>`).join('');}).catch(e=>{if(!disposed&&e.name!=='AbortError')q('.hardware-photo-status').textContent='The photo catalogue could not load. Try the NASA source links below.';});
   return () => {
     disposed = true;
-    view?.dispose();
+    loadController?.abort();photoController.abort();view?.dispose();
   };
 }
 export {

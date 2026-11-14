@@ -82,7 +82,7 @@ No suitable NASA downloadable exact Surveyor 3 or Surveyor-family lander mesh wa
 
 ## Component coverage and animation policy
 
-The MER source is a single mesh with nine material primitives. Its material groups are not a complete mechanical hierarchy; highlighting is an educational UI overlay, not proof of individual component geometry. The selected InSight asset includes named SEIS and HP3 nodes on the lander in a pre-instrument-deployment configuration. A complete ground-deployed instrument scene and separately downloadable component-level instrument models are not claimed. Viking source clips remain disabled because their mechanical meaning has not been verified. Do not invent internal views, split the hardware into fictional mechanisms, remove components or play unsupported motions.
+The original static MER display source is a single mesh with nine material primitives. The optional NASA Blender derivative below supplies a separate, named-object hierarchy. Its material groups are not a complete mechanical hierarchy; highlighting is an educational UI overlay, not proof of individual component geometry. The selected InSight asset includes named SEIS and HP3 nodes on the lander in a pre-instrument-deployment configuration. A complete ground-deployed instrument scene and separately downloadable component-level instrument models are not claimed. Viking source clips remain disabled because their mechanical meaning has not been verified. Do not invent internal views, split the hardware into fictional mechanisms, remove components or play unsupported motions.
 
 Viewer camera changes, uniform whole-model placement/scaling and application hotspots may be used without editing the source GLB. Any educational motion diagram must be separate and explicitly labelled as an educational demonstration.
 
@@ -93,3 +93,68 @@ See [photograph credits](dist/explore/assets/photos/CREDITS.md) and machine-read
 ## Analogue evidence-room laboratory (PR #1 revision)
 
 The new Sample Analysis room is a fictional, generic training laboratory, not an additional NASA hardware model. Its room, gas chambers, teaching microscope and spectrum trainer are original application geometry in `explore-src/lab-scene.js`; they do not represent Viking instruments or spacecraft interiors. No third-party mesh or substitute spacecraft is added. The NASA 3D catalogue and Viking mission/archive pages were reviewed for historical context. All three previously downloaded official GLBs retain their source bytes and configurations. Lab enclosure and tray motions are explicitly educational demonstrations of generic teaching equipment, not historical spacecraft mechanisms. Data plots, candidate-object illustrations and peak labels are synthetic, not NASA assets.
+
+## Photographic orbit and NASA-source component explorer — 2026-11-14
+
+All six repository missions were audited: Apollo 17, Surveyor 3, Spirit, Opportunity, Viking 1 and InSight. Only three are rovers. The four Mars machines include two landers; no fourth fictional rover is introduced. The official NASA 3D catalog, relevant mission pages and full NASA repository tree at the commit above were rechecked. The exact Apollo LRV and Surveyor-family download gaps remain. Existing MER, Viking and InSight GLBs remain byte-identical.
+
+### NASA MER Blender source — component display
+
+- Mission/use: Spirit and Opportunity.
+- Creator: NASA/JPL-Caltech.
+- Original source: https://science.nasa.gov/3d-resources/mars-exploration-rover-spirit-and-opportunity/
+- Download source: https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/Mars%20Exploration%20Rover%20-%20Spirit%20and%20Opportunity/Mars%20Exploration%20Rover%20-%20Spirit%20and%20Opportunity.blend
+- File: `assets/archive/mer-components.glb`; GLB / glTF 2.0, converted from Blender; 11,693,660 bytes.
+- Usage: NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement. [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- Modifications: Converted from NASA Blender source at saved frame 1243 with current-frame export, without animation, cameras, lights or geometry modifiers. 21 helper controls remain transform-only nodes; 40 hardware objects remain. NASA source viewport visibility retained (two arm objects have source hide_render true but are viewport-visible). Original official MER static materials and embedded textures copied by identical material names. Proportions, mesh vertices, normals, UVs, hierarchy and source pose retained. Exploded display instances add radial offsets only in the application; these are not a documented disassembly sequence.
+- SHA-256: `06af7058d69ada646d9b84ee0364c361350db116d9066fe313e05fa237b30f08`.
+
+### High Energy Transient Explorer
+
+- Mission/use: Archive exhibit decoration.
+- Creator: NASA/Christopher R. Meaney.
+- Original source: https://science.nasa.gov/3d-resources/high-energy-transient-explorer/
+- Download source: https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/High%20Energy%20Transient%20Explorer/High%20Energy%20Transient%20Explorer.glb
+- File: `assets/archive/hete.glb`; GLB / glTF 2.0; 61,836 bytes.
+- Usage: NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement. [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- Modifications: Downloaded bytes unchanged. Whole-model uniform placement/scaling only. Exhibit orbits and adjacent light markers are separate application elements, not historic trajectories or hardware changes.
+- SHA-256: `f514f7cff65c0d4d565408b3f6ba113c4a3b97321a3fe770c89f67820e83922c`.
+
+### CGI Moon Kit — LROC colour map
+
+- Mission/use: Moon archive.
+- Creator: NASA/Goddard Space Flight Center / Ernie Wright; LRO LROC.
+- Original source: https://svs.gsfc.nasa.gov/4720/
+- Download source: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
+- File: `assets/archive/moon-color.jpg`; JPEG, 2048×1024; 457,942 bytes.
+- Usage: NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement. [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- Modifications: Downloaded bytes unchanged. Applied to an application sphere with illustrative lighting. A NASA visualization texture, not a cartographic measurement product.
+- SHA-256: `f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170`.
+
+### CGI Moon Kit — LOLA displacement map
+
+- Mission/use: Moon archive.
+- Creator: NASA/Goddard Space Flight Center / Ernie Wright; LRO LOLA.
+- Original source: https://svs.gsfc.nasa.gov/4720/
+- Download source: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg
+- File: `assets/archive/moon-height.jpg`; JPEG, 1024×512; 111,552 bytes.
+- Usage: NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement. [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- Modifications: Downloaded bytes unchanged. Used as a subtle bump map for visual relief, not science-grade topography.
+- SHA-256: `6d93f887e7d8bedfe35ab89ba785e5e3ca12381bd092a5e6abe2c707dda8bb98`.
+
+### Rendered NASA HETE miniature
+
+- Mission/use: Opening story and fieldbook motto.
+- Creator: NASA/Christopher R. Meaney; application rendering.
+- Original source: https://science.nasa.gov/3d-resources/high-energy-transient-explorer/
+- Download source: https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/High%20Energy%20Transient%20Explorer/High%20Energy%20Transient%20Explorer.glb
+- File: `assets/archive/hete-motto.png`; PNG, 256×256 with transparency; 8,821 bytes.
+- Usage: NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement. [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- Modifications: Rendered from the bundled official HETE model, with transparent background and application lighting/camera. CSS moves this image around the motto, passing behind the words. It is not an independently designed spacecraft.
+- SHA-256: `8fabf519e62a9bd02ec6832bfef99f55ba8a31c2cd4b0e799d5a00d37b03321e`.
+
+The MER part selector uses the 40 NASA-named hardware nodes, grouping their material primitives together. InSight exposes its supplied named meshes. Viking exposes only its two coarse source meshes. These displays cannot reveal absent internal parts, bolts or engineering tolerances. Source movement clips remain disabled. Reassemble returns the unchanged source display. Reproduction scripts are in `scripts/nasa-assets/`; the Blender export audit and asset checksums are in `explore-public/assets/archive/`.
+
+### NASA photographic records
+
+56 NASA photographs/photographic mosaics are bundled: Apollo 17 (16), Surveyor 3 (8, including context/training), Opportunity (8), Spirit (8), Viking 1 (8), InSight (8, including Earth tests). Individual title, full NASA caption, credit, NASA ID, official source page, download/original URL, catalogue date, explicit caption exposure date where available, processing and checksums are retained in `explore-public/assets/archive/photos.json`. No capture dates are inferred from catalogue timestamps. Display images are resized to at most 1600 pixels and encoded WebP; orbital thumbnails use 384 pixels. No generative edits. Images and captions are cached from NASA, not a live telemetry feed.

@@ -1,0 +1,76 @@
+{
+  "checked": "2026-11-14",
+  "assets": [
+    {
+      "path": "assets/archive/mer-components.glb",
+      "mission": "Spirit and Opportunity",
+      "name": "NASA MER Blender source \u2014 component display",
+      "source": "https://science.nasa.gov/3d-resources/mars-exploration-rover-spirit-and-opportunity/",
+      "download": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/Mars%20Exploration%20Rover%20-%20Spirit%20and%20Opportunity/Mars%20Exploration%20Rover%20-%20Spirit%20and%20Opportunity.blend",
+      "creator": "NASA/JPL-Caltech",
+      "format": "GLB / glTF 2.0, converted from Blender",
+      "modifications": "Converted from NASA Blender source at saved frame 1243 with current-frame export, without animation, cameras, lights or geometry modifiers. 21 helper controls remain transform-only nodes; 40 hardware objects remain. NASA source viewport visibility retained (two arm objects have source hide_render true but are viewport-visible). Original official MER static materials and embedded textures copied by identical material names. Proportions, mesh vertices, normals, UVs, hierarchy and source pose retained. Exploded display instances add radial offsets only in the application; these are not a documented disassembly sequence.",
+      "bytes": 11693660,
+      "sha256": "06af7058d69ada646d9b84ee0364c361350db116d9066fe313e05fa237b30f08",
+      "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceSha256": "1f1e2b246aca461d6d1d2b5f9ac9dff7fd225d242fc000131277457815e160c2"
+    },
+    {
+      "path": "assets/archive/hete.glb",
+      "mission": "Archive exhibit decoration",
+      "name": "High Energy Transient Explorer",
+      "source": "https://science.nasa.gov/3d-resources/high-energy-transient-explorer/",
+      "download": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/High%20Energy%20Transient%20Explorer/High%20Energy%20Transient%20Explorer.glb",
+      "creator": "NASA/Christopher R. Meaney",
+      "format": "GLB / glTF 2.0",
+      "modifications": "Downloaded bytes unchanged. Whole-model uniform placement/scaling only. Exhibit orbits and adjacent light markers are separate application elements, not historic trajectories or hardware changes.",
+      "bytes": 61836,
+      "sha256": "f514f7cff65c0d4d565408b3f6ba113c4a3b97321a3fe770c89f67820e83922c",
+      "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "path": "assets/archive/moon-color.jpg",
+      "mission": "Moon archive",
+      "name": "CGI Moon Kit \u2014 LROC colour map",
+      "source": "https://svs.gsfc.nasa.gov/4720/",
+      "download": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+      "creator": "NASA/Goddard Space Flight Center / Ernie Wright; LRO LROC",
+      "format": "JPEG, 2048\u00d71024",
+      "modifications": "Downloaded bytes unchanged. Applied to an application sphere with illustrative lighting. A NASA visualization texture, not a cartographic measurement product.",
+      "bytes": 457942,
+      "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+      "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "path": "assets/archive/moon-height.jpg",
+      "mission": "Moon archive",
+      "name": "CGI Moon Kit \u2014 LOLA displacement map",
+      "source": "https://svs.gsfc.nasa.gov/4720/",
+      "download": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_3_8bit.jpg",
+      "creator": "NASA/Goddard Space Flight Center / Ernie Wright; LRO LOLA",
+      "format": "JPEG, 1024\u00d7512",
+      "modifications": "Downloaded bytes unchanged. Used as a subtle bump map for visual relief, not science-grade topography.",
+      "bytes": 111552,
+      "sha256": "6d93f887e7d8bedfe35ab89ba785e5e3ca12381bd092a5e6abe2c707dda8bb98",
+      "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "path": "assets/archive/hete-motto.png",
+      "mission": "Opening story and fieldbook motto",
+      "name": "Rendered NASA HETE miniature",
+      "source": "https://science.nasa.gov/3d-resources/high-energy-transient-explorer/",
+      "download": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/11ebb4ee043715aefbba6aeec8a61746fad67fa7/3D%20Models/High%20Energy%20Transient%20Explorer/High%20Energy%20Transient%20Explorer.glb",
+      "creator": "NASA/Christopher R. Meaney; application rendering",
+      "format": "PNG, 256\u00d7256 with transparency",
+      "modifications": "Rendered from the bundled official HETE model, with transparent background and application lighting/camera. CSS moves this image around the motto, passing behind the words. It is not an independently designed spacecraft.",
+      "bytes": 8821,
+      "sha256": "8fabf519e62a9bd02ec6832bfef99f55ba8a31c2cd4b0e799d5a00d37b03321e",
+      "usage": "NASA educational and informational media conditions; retain creator/source credits, third-party notices and no NASA endorsement.",
+      "usageUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  ]
+}

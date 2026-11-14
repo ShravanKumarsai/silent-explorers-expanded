@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
-const root='dist/explore';const list=['./','./index.html','./manifest.webmanifest','./icon.svg','./fonts.css','./assets/photos/credits.json','./assets/models/manifest.json'];
+const root='dist/explore';const list=['./','./index.html','./manifest.webmanifest','./icon.svg','./fonts.css','./motto.css','./assets/archive/hete-motto.png','./assets/archive/photos.json','./assets/photos/credits.json','./assets/models/manifest.json'];
 for(const name of fs.readdirSync(path.join(root,'assets')))if(/\.(js|css)$/.test(name))list.push('./assets/'+name);
 for(const name of fs.readdirSync(path.join(root,'assets/photos')))if(name.endsWith('.jpg'))list.push('./assets/photos/'+name);
 for(const name of ['activity-base.css','vivid.css','interactions.js'])if(fs.existsSync(path.join(root,name)))list.push('./'+name);

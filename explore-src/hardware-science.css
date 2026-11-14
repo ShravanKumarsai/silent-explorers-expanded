@@ -937,3 +937,4 @@
   font-size: 12px;
   color: #c2d3c1;
 }
+.scene-load-actions{pointer-events:auto;margin-top:14px}.scene-load-actions .button{min-height:40px;padding:10px 15px;font-size:12px}.flight-loading .scene-load-detail{max-width:48ch;overflow-wrap:anywhere}
