@@ -1,0 +1,358 @@
+:root {
+  --story-night:#0b161a;
+  --story-paper:#edf0e4;
+  --story-lime:#d9e6b6;
+  --story-muted:#a8bdb3;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family:
+    "DM Sans",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+body {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+button,
+input,
+select {
+  line-height: 1.4;
+}
+.header {
+  position: fixed;
+  height: 88px;
+  gap: 24px;
+  background: linear-gradient(#0b161af2, #0b161ac9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #d9e6b61c;
+}
+.header .brand {
+  font-weight: 600;
+  letter-spacing: .025em;
+  flex-shrink: 0;
+}
+.brand-mark {
+  color: var(--story-lime);
+}
+.header .desktop-nav {
+  align-items: center;
+  margin: 0;
+  gap: 28px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.header-actions {
+  flex-shrink: 0;
+  gap: 10px;
+}
+.header .menu-control {
+  background: var(--story-paper);
+  font-size: 12px;
+  gap: 14px;
+}
+.header .motion-control {
+  flex-shrink: 0;
+  background: #d9e6b610;
+  color: var(--story-paper);
+  border-color: #d9e6b649;
+}
+.header-expedition {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 42px;
+  padding: 11px 17px;
+  border: 1px solid #d9e6b66e;
+  background: #d9e6b612;
+  border-radius: 30px;
+  color: var(--story-lime);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.header-expedition:hover {
+  background: #d9e6b625;
+}
+.header-expedition .short-label {
+  display: none;
+}
+.header-expedition b {
+  font-size: 15px;
+  font-weight: 400;
+}
+.menu a.expedition-menu-link {
+  color: var(--story-lime);
+}
+.cosmic-heading h1,
+.cosmic-heading h2,
+.orbit-hub h2,
+.signal-copy h2 {
+  font-kerning: normal;
+}
+.orbit-hub h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-weight: 400;
+}
+.wheel-top,
+.signal-top,
+.orbit-card small,
+.section-label,
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+}
+.orbit-card strong {
+  font-weight: 500;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+}
+.wheel-ready .wheel-story .story-step {
+  align-items: stretch;
+}
+.wheel-story h2,
+.wheel-story h3 {
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+.wheel-story p {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.story-dates strong {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.archive-title h2,
+.chronicle-head h2,
+.about h2 {
+  letter-spacing: -.045em;
+}
+.signal-copy .signal-lede {
+  max-width: 43ch;
+}
+.signal-copy h2 em {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-weight: 400;
+}
+.signal-bottom strong {
+  font-variant-numeric: tabular-nums;
+}
+.archive-row {
+  font-kerning: normal;
+}
+.fieldbook-continuation {
+  padding: 64px 7vw;
+  background: #edf0e4;
+  color: #18302c;
+  border-top: 1px solid #bbc9b8;
+}
+.fieldbook-continuation .eyebrow {
+  color: #566a59;
+}
+.fieldbook-continuation h2 {
+  font: 400 clamp(32px, 4vw, 52px)/1.1 Georgia, serif;
+  letter-spacing: -.035em;
+  margin: 20px 0;
+}
+.fieldbook-continuation p {
+  max-width: 610px;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 20px 0;
+}
+.fieldbook-continuation > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.fieldbook-continuation button {
+  min-height: 46px;
+  padding: 14px 23px;
+  background: #18302c;
+  color: #edf0e4;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.fieldbook-continuation button:last-child {
+  background: #d9e6b6;
+  color: #18302c;
+  border: 1px solid #8c9f74;
+}
+@media (max-width: 1050px) {
+  .header .desktop-nav {
+    gap: 18px;
+    font-size: 12px;
+  }
+  .header-expedition {
+    gap: 10px;
+    padding: 10px 13px;
+  }
+  .header {
+    gap: 16px;
+  }
+}
+@media (max-width: 850px) {
+  .header .desktop-nav {
+    display: none;
+  }
+  .header {
+    height: 78px;
+  }
+  .header-expedition {
+    font-size: 12px;
+  }
+  .header .menu-control {
+    padding: 12px 14px;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    height: 72px;
+    padding: 0 18px;
+    gap: 8px;
+  }
+  .header .brand {
+    font-size: 9px;
+    gap: 7px;
+  }
+  .header .brand-mark {
+    font-size: 34px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .header-expedition {
+    min-height: 36px;
+    padding: 9px 11px;
+    font-size: 11px;
+    gap: 7px;
+  }
+  .header-expedition .long-label {
+    display: none;
+  }
+  .header-expedition .short-label {
+    display: inline;
+  }
+  .header .motion-control {
+    width: 34px;
+    height: 34px;
+  }
+  .header .menu-control {
+    font-size: 11px;
+    padding: 10px 11px;
+    gap: 8px;
+  }
+  .header .menu-icon {
+    width: 13px;
+  }
+  .fieldbook-continuation {
+    padding: 42px 7vw;
+  }
+  .fieldbook-continuation p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 355px) {
+  .header {
+    padding: 0 12px;
+  }
+  .header .brand {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .header .brand-mark {
+    font-size: 27px;
+  }
+  .header-actions {
+    gap: 5px;
+  }
+  .header-expedition {
+    padding: 8px 9px;
+  }
+  .header .menu-control {
+    padding: 10px 9px;
+  }
+}
+.header-expedition svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  display: block;
+}
+.header .motion-control span {
+  font-family: Arial, sans-serif;
+  font-variant-emoji: text;
+}
+.reel-kinetic {
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.reel-word {
+  vertical-align: baseline;
+}
+.reel-title {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-weight: 400;
+  letter-spacing: -.04em;
+}
+.reel-lede {
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+.reel-info-text,
+.reel-info-figure {
+  min-width: 0;
+}
+.reel-facts {
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  align-items: baseline;
+  column-gap: 24px;
+}
+.reel-facts dd {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.reel-sub,
+.reel-caption {
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.reel-timeline li {
+  align-items: baseline;
+}
+.reel-actions {
+  align-items: center;
+}

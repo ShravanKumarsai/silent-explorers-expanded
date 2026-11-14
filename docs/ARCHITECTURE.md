@@ -8,8 +8,10 @@ Official GLBs are immutable assets. Museum camera controls change only the view;
 
 The service worker is scoped only to `/explore/`. It caches essential educational content, application bundles and historical photographs after first online installation. Large models are excluded. It never intercepts or changes the original experience. Cache version derives from built content.
 
-No backend, API keys, paid API, user account, external telemetry or AI service is required. Optional Google Fonts requests can fail without blocking the experience. Storage failure is reported in the footer. Journal export produces a local JSON download.
+No backend, API keys, paid API, user account, external telemetry or AI service is required. Self-hosted DM Sans and IBM Plex Mono fonts are shared by the isolated documents; system fallbacks remain available. Storage failure is reported in the footer. Journal export produces a local JSON download.
 
 Current architecture update: `docs/UNIFIED_EXPEDITION.md` supersedes the earlier two-entry presentation. The same outer document switches between a retained original-story frame and catalogue/game chapters, with mutually exclusive controls. The canonical app entry is now `/`.
 
 The Sample Analysis mount now delegates to `laboratory.js`. Its pure state/data/rubric modules, lazy Three.js room/player, contextual instrument UI and cleanup reuse the existing hash route and journal callback. See `docs/LABORATORY.md` for the engine decision, fictional asset boundaries and verification.
+
+The Story Orbit presentation revision adds `orbit-theme.css` as the final catalogue theme, `expedition-layout.js` for the rover shell/tabs, and an injected `heritage-src/presentation.css` layer for static typography/header additions. Both isolated documents load the same self-hosted font assets; CSS application remains inside each document. See `STORY_ORBIT_UI.md`.
