@@ -1,10 +1,10 @@
 # Silent Explorers — Field Institute
 
-The complete original Silent Explorers experience remains at `/`. The independent expanded application is at `/explore/`.
+The root `/` is the unified entry: the preserved original opening leads into the reading catalogue and activities. `/explore/` remains a compatibility entry and canonicalizes to the root.
 
 ## Install, build and run
 
-Use Node.js 22+ and npm. Run `npm ci`, `npm test`, `npm run build` and `npm run verify`. Then serve `dist/` with a static HTTP server, for example `python -m http.server 8000 --directory dist`. Open `http://localhost:8000/` for the original and `http://localhost:8000/explore/` for the expansion. On restricted machines pass a writable cache location to npm, e.g. `npm ci --cache /tmp/silent-explorers-npm`.
+Use Node.js 22+ and npm. Run `npm ci`, `npm test`, `npm run build` and `npm run verify`. Then serve `dist/` with a static HTTP server, for example `python -m http.server 8000 --directory dist`. Open `http://localhost:8000/` for the unified experience or `http://localhost:8000/#lab/analysis` for the evidence-room laboratory. On restricted machines pass a writable cache location to npm, e.g. `npm ci --cache /tmp/silent-explorers-npm`.
 
 The build clears only `dist/explore/`, never the original site. Source is in `explore-src/`, new public assets in `explore-public/`. The original project does not need npm to run.
 
@@ -39,3 +39,7 @@ See `PROJECT_STATUS.md`, `docs/TESTING_REPORT.md`, `docs/ORIGINAL_FILE_MANIFEST.
 ## Unified entry and flagship expedition
 
 Start at `/`. The original animated story is the opening chapter, with catalogue/expedition continuation at its end. Existing `/explore/` links canonicalize to the same root workflow. `scripts/unify.mjs` builds the root shell and the isolated original chapter from `heritage-src/index.html` plus unchanged baseline assets. The original root entry is deliberately replaced by this authorized unified shell; original animation source remains intact. See `docs/UNIFIED_EXPEDITION.md` for camera modes, controls, complete mission arc and validation limits.
+
+## First-person Sample Analysis laboratory
+
+The existing Sample Analysis route now opens a fictional analogue laboratory with three physical instruments, timed sample/control workflows, interactive readouts, case-dependent evidence reports, three difficulties, replay and local report export. See [laboratory architecture, engine comparison, controls and QA](docs/LABORATORY.md). This change is part of draft PR #1; no merge or publication is implied.
