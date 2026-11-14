@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {build} from 'esbuild';import {Window} from 'happy-dom';
 const window=new Window({url:'https://example.test/explore/'});window.document.body.innerHTML='<div id="app"></div>';
-for(const k of ['window','document','location','localStorage','Event','HTMLElement','HTMLCanvasElement','Blob','URL'])Object.defineProperty(globalThis,k,{value:k==='window'?window:window[k],configurable:true,writable:true});
+for(const k of ['window','MutationObserver','document','location','localStorage','Event','HTMLElement','HTMLCanvasElement','Blob','URL'])Object.defineProperty(globalThis,k,{value:k==='window'?window:window[k],configurable:true,writable:true});
 Object.defineProperty(globalThis,'navigator',{value:window.navigator,configurable:true});
 globalThis.matchMedia=q=>window.matchMedia(q);globalThis.ResizeObserver=class{observe(){}disconnect(){}};globalThis.requestAnimationFrame=()=>1;globalThis.cancelAnimationFrame=()=>{};globalThis.devicePixelRatio=1;
 const context=new Proxy({},{get:()=>()=>{},set:()=>true});window.HTMLCanvasElement.prototype.getContext=()=>context;window.HTMLElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:500,height:400});window.scrollTo=()=>{};

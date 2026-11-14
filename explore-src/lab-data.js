@@ -1,0 +1,27 @@
+const STATIONS = { gas: { name: "Atmospheric gas analysis", unit: "O\u2082 response \xB7 \xB5mol/g", mode: "Incubation / heat-treated control", color: "#54d9df" }, scope: { name: "Microscopy & marker detection", unit: "Candidate objects / field", mode: "Bright-field / 100\xD7", color: "#bfafff" }, chem: { name: "Chemical composition", unit: "Relative response \xB7 a.u.", mode: "Mass spectrum / full scan", color: "#ffc076" } };
+const DIFFICULTIES = { 1: { name: "Explorer", portions: 6, duration: 6, hints: true, noise: 0.05, repeat: false }, 2: { name: "Researcher", portions: 5, duration: 8, hints: false, noise: 0.12, repeat: false }, 3: { name: "Specialist", portions: 4, duration: 10, hints: false, noise: 0.25, repeat: true } };
+const SCENARIOS = [
+  { id: "glass", name: "Case 01 \xB7 The glass ridge", dispatch: "A sealed analogue soil from a dry glass-rich ridge. The intake team asks whether its gas response requires biology.", gas: [1.2, 3.5, 5.6, 6.9, 7.2, 7.3], control: [1.1, 3.2, 5.3, 6.6, 7, 7.1], objects: 2, blankObjects: 1, peaks: [12, 10, 84, 7], blankPeaks: [4, 3, 6, 2], answer: "abiotic", mechanism: "oxidant", support: ["gas", "chem"], conflict: ["scope"], confidence: 65, explain: "A strong heat-resistant gas response and an oxidant-associated peak favor a chemical reaction. Sparse shapes are not diagnostic cells. This favors an abiotic explanation for this response; it does not establish that life is absent." },
+  { id: "seal", name: "Case 02 \xB7 The breached seal", dispatch: "A dark sediment arrived with a damaged transport seal. Determine whether the signal belongs to the sediment or the handling chain.", gas: [0.4, 1.7, 3.1, 4.4, 5.5, 6.2], control: [0.5, 1.8, 3.2, 4.5, 5.7, 6.3], objects: 15, blankObjects: 14, peaks: [68, 72, 8, 61], blankPeaks: [66, 70, 7, 60], answer: "contamination", mechanism: "handling", support: ["blank", "chem"], conflict: ["scope"], confidence: 80, explain: "The procedural blank contains nearly the same marker counts and spectrum as the sample. Handling contamination is the strongest explanation. Apparent cell-like shapes do not establish a sample-native signal." },
+  { id: "delta", name: "Case 03 \xB7 The buried delta", dispatch: "A protected analogue sediment shows a weak response. The team needs a defensible next experiment, not a declaration of discovery.", gas: [0.3, 1.1, 2.5, 3.9, 5, 5.8], control: [0.2, 0.5, 0.9, 1.3, 1.8, 2.2], objects: 10, blankObjects: 2, peaks: [43, 49, 21, 17], blankPeaks: [5, 7, 6, 4], answer: "inconclusive", mechanism: "mixed", support: ["gas", "scope"], conflict: ["limits"], confidence: 45, explain: "Sample/control differences motivate follow-up, but morphology and nonspecific organic fragments cannot identify life. Unknown chemistry and detection limits remain competing explanations. Independent blanks, replication and molecular identification are needed." }
+];
+const EVIDENCE = { gas: "Gas kinetics: compare untreated sample with heat-treated aliquot.", scope: "Microscopy: candidate shapes and marker counts compared with procedural blank.", chem: "Spectrum: compare sample peaks with the procedural blank.", blank: "Handling chain: procedural blank response relative to sample.", limits: "Specificity: shapes and fragments have non-biological alternatives." };
+const CONCLUSIONS = { abiotic: "Chemical reaction favored for this signal", contamination: "Handling contamination favored", inconclusive: "Unresolved signal; independent follow-up needed", life: "Life is confirmed" };
+const MECHANISMS = { oxidant: "Heat-resistant oxidant chemistry explains the gas signal", handling: "A shared handling source explains sample and blank", mixed: "Several mechanisms remain compatible with the readings" };
+function readings(caseId, difficulty, station, repeat = 0) {
+  const c = SCENARIOS.find((x) => x.id === caseId) || SCENARIOS[0], d = DIFFICULTIES[difficulty] || DIFFICULTIES[1];
+  const drift = (i) => Math.sin((i + 1) * 7.3 + repeat * 2.1) * d.noise;
+  const adjust = (a) => a.map((v, i) => Math.max(0, +(v + drift(i)).toFixed(2)));
+  if (station === "gas") return { x: [0, 2, 4, 6, 8, 10], sample: adjust(c.gas), control: adjust(c.control), labels: ["0", "2", "4", "6", "8", "10"], axis: "Incubation time \xB7 training min", note: "The control is a heated aliquot of the same soil. Heating changes chemistry too; survival of a response favors a heat-resistant mechanism, not proof of a particular oxidant." };
+  if (station === "scope") return { x: [1, 2, 3], sample: adjust([c.objects, c.objects + 1, c.objects - 1]), control: adjust([c.blankObjects, c.blankObjects + 1, c.blankObjects]), labels: ["Field 1", "Field 2", "Field 3"], axis: "Independent image field", note: "The procedural blank follows the same preparation without soil. Shapes and marker staining are nonspecific. The image is an illustration of synthetic counts, not a micrograph." };
+  return { x: [43, 57, 83, 105], sample: adjust(c.peaks), control: adjust(c.blankPeaks), labels: ["43 \xB7 fragment A", "57 \xB7 fragment B", "83 \xB7 oxidant proxy", "105 \xB7 seal proxy"], axis: "Nominal mass-to-charge \xB7 m/z (fictional training peaks)", note: "Procedural blank: the same vessel, reagents and handling without soil. Peak assignments are fictional teaching proxies; a peak alone is not molecular or biological identification." };
+}
+export {
+  CONCLUSIONS,
+  DIFFICULTIES,
+  EVIDENCE,
+  MECHANISMS,
+  SCENARIOS,
+  STATIONS,
+  readings
+};

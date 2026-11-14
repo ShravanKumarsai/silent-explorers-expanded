@@ -89,3 +89,7 @@ Viewer camera changes, uniform whole-model placement/scaling and application hot
 ## Supporting mission photographs
 
 See [photograph credits](dist/explore/assets/photos/CREDITS.md) and machine-readable `dist/explore/assets/photos/credits.json`. They are historical photographs or camera mosaics, not replacements for missing hardware meshes.
+
+## Analogue evidence-room laboratory (PR #1 revision)
+
+The new Sample Analysis room is a fictional, generic training laboratory, not an additional NASA hardware model. Its room, gas chambers, teaching microscope and spectrum trainer are original application geometry in `explore-src/lab-scene.js`; they do not represent Viking instruments or spacecraft interiors. No third-party mesh or substitute spacecraft is added. The NASA 3D catalogue and Viking mission/archive pages were reviewed for historical context. All three previously downloaded official GLBs retain their source bytes and configurations. Lab enclosure and tray motions are explicitly educational demonstrations of generic teaching equipment, not historical spacecraft mechanisms. Data plots, candidate-object illustrations and peak labels are synthetic, not NASA assets.
