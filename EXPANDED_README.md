@@ -11,18 +11,18 @@ The build clears only `dist/explore/`, never the original site. Source is in `ex
 ## Explore
 
 - Six mission dossiers with distinct narratives, timelines, activities, hardware systems and source caveats.
-- Official-model museum with rotation, zoom, pan, keyboard controls, source-mesh selection, external highlight boxes and full-screen mode where supported.
+- Combined Hardware & systems page: official-model viewer and Inside the machine guide together, with rotation, zoom, pan, source-group highlights and full-screen controls.
 - Component field guides for all missions. Apollo LRV and Surveyor model gaps are explicit.
 - Playable rover tactical view with optional lazy NASA MER 3D surface view; keyboard and pointer/touch controls, obstacles, energy, observations and saved traverses.
 - Eight lab activities with controls, rules, feedback, scoring and replay.
-- Mission Control allocation affects drive speed. Solar/RTG/battery distinctions are preserved.
-- Latitude–longitude atlas distinguishes landing sites, approximate historical coordinates and final resting-location descriptions. It is not a terrain map or historical traverse reconstruction.
+- Science Lab → Power & Operations: three mission-specific planning shifts with solar/RTG/finite-battery distinctions, reserve forecasts, scored reports and saved study plans.
+- Science Lab → Mission atlas distinguishes landing sites, approximate historical coordinates and final resting-location descriptions. It is not a terrain map or historical traverse reconstruction.
 - Local journal, badges, best scores, traverse save/resume, JSON export and explicit progress reset. No account/backend needed.
 - Opt-in short audio feedback, reduced motion and an offline cache for essential content after first online installation. Large models remain online-only unless already available through browser HTTP cache.
 
 ## Controls
 
-Simulator: focus the terrain; W/S or ↑/↓ drive, A/D or ←/→ steer, Shift changes speed, E records an observation when stopped near a target. Touch buttons provide equivalent movement controls. The active drive allocation in Mission Control changes simulated movement speed. MER recordings represent in-situ observations, not sample-return caching. Apollo terrain and drive physics remain educational approximations, not a validated rover dynamics model.
+Simulator: focus the terrain; W/S or ↑/↓ drive, A/D or ←/→ steer, Shift changes speed, E records an observation when stopped near a target. Touch buttons provide equivalent movement controls. Each rover activity manages its own energy and movement budget. MER recordings represent in-situ observations, not sample-return caching. Apollo terrain and drive physics remain educational approximations, not a validated rover dynamics model.
 
 Museum: drag to rotate, wheel to zoom, right drag to pan; two-finger gestures for zoom/pan. Focus the canvas for arrow/+/- keyboard controls, or use toolbar buttons. Full screen depends on browser support. NASA files are not rigged or modified to invent component motion; unsupported components have descriptions rather than fabricated internals.
 
@@ -43,3 +43,7 @@ Start at `/`. The original animated story is the opening chapter, with catalogue
 ## First-person Sample Analysis laboratory
 
 The existing Sample Analysis route now opens a fictional analogue laboratory with three physical instruments, timed sample/control workflows, interactive readouts, case-dependent evidence reports, three difficulties, replay and local report export. See [laboratory architecture, engine comparison, controls and QA](docs/LABORATORY.md). This change is part of draft PR #1; no merge or publication is implied.
+
+## Hardware and Science Lab organization
+
+Museum and engineering descriptions now share the Hardware & systems page. Mission Atlas is a reference tool under Science Lab; Mission Control is combined with Power Management as Power & Operations. Old links remain compatible. See [the review report, contrast correction and validation](docs/MISSION_TOOLS_REPORT.md).

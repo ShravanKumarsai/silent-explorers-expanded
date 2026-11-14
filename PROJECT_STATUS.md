@@ -63,3 +63,7 @@ Replaces Sample Analysis in the existing unified route with a first-person gener
 ## Story Orbit UI revision
 
 Unifies the catalogue/expedition palette with the original Story Orbit, self-hosts the body/technical fonts, improves original reading typography, adds persistent expedition shortcuts and a mobile opening-story return, and organizes rover controls into focused tabs and expandable notes. The camera grid-stretch issue is corrected and Launch is above the fold. See `docs/STORY_ORBIT_UI.md` for changed modules, exact checks and limits. Original animation source and NASA models are preserved. This revision does not deploy hosting.
+
+## Combined hardware and mission-tool review
+
+Hardware & systems combines the museum and engineering guide. Mission Atlas is now a Science Lab reference; Mission Control and Power Management are one improved Power & Operations activity with three source-specific planning shifts, reserve forecasts and a scored report. Legacy routes retain mission context. The evidence-panel contrast conflict is corrected across the six mission pages; targeted browser checks measure at least 5.78:1 on checked text. 81 automated checks, production build, asset/Draco verification and focused browser journeys pass. See `docs/MISSION_TOOLS_REPORT.md` for the before/after report, exact validation and limits. No hosting deployment is part of this revision.
