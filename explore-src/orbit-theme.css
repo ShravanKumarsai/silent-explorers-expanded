@@ -1278,3 +1278,10 @@ main:has(> .expedition) {
     border-radius: 5px;
   }
 }
+/* Centre the catalogue's editorial headings and mission-card copy. */
+.institute-hero .hero-words,.book-contents>div,.book-contents li a>div,.collection-section .section-heading,.mission-card .card-copy{text-align:center}
+.institute-hero .hero-words>p{margin-inline:auto}
+.institute-hero .inline-actions,.institute-hero .hero-facts{justify-content:center}
+.collection-section .section-heading{flex-direction:column;align-items:center;gap:16px}
+.mission-card .card-copy{flex-direction:column;align-items:center;gap:16px}
+.mission-card .card-copy>div{width:100%}

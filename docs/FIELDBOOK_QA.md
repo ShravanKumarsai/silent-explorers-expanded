@@ -40,3 +40,7 @@ See [the full implementation/source/limitations report](ARCHIVE_AND_EXPEDITION_U
 - `scripts/ui-browser-qa.cjs`: original header and expedition at 1440/1024/850/390/320px, original animation navigation/reading, retained original return, first-view launch, tabs and self-hosted fonts pass; no local 404s, external font calls or page errors.
 
 These are Chromium software-rendering/touch-emulation checks, not certification on physical Android hardware. NASA models are visualization meshes, not complete engineering CAD; the missing Apollo/Surveyor model gaps, coarse Viking grouping, synthetic camera/data semantics and asset usage conditions are documented explicitly. No hosting deployment was performed by these checks.
+
+## Photo-browser hover and catalogue alignment
+
+Photo browser cards lift with a subtle shadow and image zoom on pointer hover; keyboard focus receives the same lift. System and application reduced-motion settings disable transforms/transitions. Catalogue hero, collection headings, mission-card copy and photo-browser captions are centered. Production build and asset verification pass. Chromium checks confirm centered card text, hover transform, reduced-motion suppression, working photo selection/Escape, and no horizontal overflow in the catalogue/archive at 390px.

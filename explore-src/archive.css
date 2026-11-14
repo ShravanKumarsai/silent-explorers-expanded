@@ -432,3 +432,12 @@
 }
 /* Keep the planetary installation prominent and its reading controls together. */
 .photo-archive .page-heading{margin-bottom:26px}.archive-worlds>button{padding:20px 24px}.archive-worlds strong{font-size:26px}.archive-stage{height:min(70vh,680px);min-height:440px;border-radius:0 0 12px 12px;scroll-margin-top:95px}.archive-toolbar{border-radius:12px 12px 0 0;padding:16px}.archive-mission-note{padding:12px 18px;margin:0;background:var(--panel);border-inline:1px solid #455653}.archive-stage-caption{max-width:230px}.archive-status{margin:16px 0;color:var(--muted)}.archive-worlds button[aria-pressed=true]{box-shadow:inset 0 -3px var(--lime)}.archive-browse,.archive-source-note{border-radius:10px}.archive-photo-card{border-radius:8px;overflow:hidden}.archive-photo-card:hover{border-color:var(--lime)}.expedition-mission-label{font-size:12px;color:var(--muted)}@media(max-width:650px){.archive-worlds{grid-template-columns:1fr 1fr;gap:8px}.archive-worlds>button{padding:14px 10px;gap:8px}.archive-worlds strong{font-size:19px}.archive-worlds small,.archive-worlds em,.archive-worlds b{display:none}.world-symbol{font-size:28px}.archive-stage{height:55vh;min-height:380px}.archive-toolbar>div{width:100%}.archive-stage-caption strong{font-size:21px}.expedition-mission-label{display:none}}
+/* Photo browser: restrained lift and image motion, shared with keyboard focus. */
+.archive-browse .archive-photo-card{transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background-color .24s ease;transform:translateY(0);text-align:center}
+.archive-browse .archive-photo-card>span{width:100%;position:relative;background:var(--panel);flex:1}
+.archive-browse .archive-photo-card img{transition:transform .4s ease,filter .4s ease;transform:scale(1)}
+.archive-browse .archive-photo-card:focus-visible{transform:translateY(-5px);border-color:var(--lime);box-shadow:0 12px 28px #0005}
+@media(hover:hover) and (pointer:fine){.archive-browse .archive-photo-card:hover{transform:translateY(-5px);border-color:var(--lime);box-shadow:0 12px 28px #0005}.archive-browse .archive-photo-card:hover img{transform:scale(1.045);filter:brightness(1.08)}}
+.archive-browse .archive-photo-card:active{transform:translateY(-1px)}
+.reduce-motion .archive-browse .archive-photo-card,.reduce-motion .archive-browse .archive-photo-card img{transition:none;transform:none!important}
+@media(prefers-reduced-motion:reduce){.archive-browse .archive-photo-card,.archive-browse .archive-photo-card img{transition:none;transform:none!important}}
