@@ -1,4 +1,4 @@
-import{R as kl}from"./index-9SC6FZna.js";/**
+import {ROCKS as kl} from "../runtime/simulation.js";/**
  * @license
  * Copyright 2010-2025 Three.js Authors
  * SPDX-License-Identifier: MIT
